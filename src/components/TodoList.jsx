@@ -1,6 +1,6 @@
 export default function TodoList(props) {
 	// declare variables
-	const {todoList, handleEditTodo, handleDeleteTodo} = props
+	const {todoList, handleMarkDone, handleEditTodo, handleDeleteTodo} = props
 
 	return (
 		<div>
@@ -9,7 +9,9 @@ export default function TodoList(props) {
 					<ul>
 						{todo}
 						<div>
-							<i className="fa-solid fa-square-check"></i>
+							<i className="fa-solid fa-square-check" onClick={() => {
+								handleMarkDone(todoIndex)
+							}}></i>
 							<i className="fa-solid fa-square-pen" onClick={() => {
 								handleEditTodo(todoIndex)
 							}}></i>
