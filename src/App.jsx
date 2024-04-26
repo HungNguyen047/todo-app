@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import TodoBackground from './components/TodoBackground'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
@@ -11,8 +11,13 @@ function App() {
 	const [todoCompleteList, setTodoCompleteList] = useState([])
 
 	// declare functions
+	function persistData(newTodoList) {
+		localStorage.setItem("todoList", JSON.stringify({todoList: newTodoList}))
+	}
+
 	function handleAddTodo(newTodoItem) {
 		const newTodoList = [...todoList, newTodoItem]
+		persistData(newTodoList)
 		setTodoList(newTodoList)
 	}
 	
@@ -22,6 +27,7 @@ function App() {
 				todoIndex !== indexTobeDeleted
 			)
 		})
+		persistData(newTodoList)
 		setTodoList(newTodoList)
 	}
 
@@ -52,6 +58,21 @@ function App() {
 		const itemTobeMarkUndone = todoCompleteList[indexTobeMarkUndone]
 		handleAddTodo(itemTobeMarkUndone)
 	}
+
+	useEffect(() => {
+		if (!localStorage) {
+			return
+		}
+
+		let localTodoList = localStorage.getItem("todoList")
+		if (!localTodoList) {
+			return
+		}
+
+		console.log(localTodoList)
+		localTodoList = JSON.parse(localTodoList).todoList
+		setTodoList(localTodoList)
+	}, [])
 
 	return (
 		<>
