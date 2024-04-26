@@ -4,7 +4,7 @@ export default function TodoInput(props) {
 
 	return (
 		<div>
-			<input placeholder="Add/Edit todo ..." value={todoItem} onChange={(event) => {
+			<input className="flex-1" placeholder="Add/Edit todo ..." value={todoItem} onChange={(event) => {
 				setTodoItem(event.target.value)
 			}} />
 			<button onClick={() => {

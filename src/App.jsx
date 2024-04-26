@@ -75,12 +75,12 @@ function App() {
 	}, [])
 
 	return (
-		<>
+		<main className="flex flex-col items-center justify-center">
 			<TodoBackground />
 			<TodoInput todoItem={todoItem} setTodoItem={setTodoItem} handleAddTodo={handleAddTodo} />
 			<TodoList todoList={todoList} handleMarkDone={handleMarkDone} handleEditTodo={handleEditTodo} handleDeleteTodo={handleDeleteTodo} />
 			<TodoCompleteList todoCompleteList={todoCompleteList} handleMarkUndone={handleMarkUndone} handleDeleteTodoComplete={handleDeleteTodoComplete} />
-		</>
+		</main>
 	)
 }
 
