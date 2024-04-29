@@ -4,10 +4,23 @@
 @tailwind utilities;
 
 
+/* declare variables */
+:root {
+	--orange-color: #E77740;
+	--lighter-orange-color: #EA8757;
+	--lightest-orange-color: #EFA47E;
+	--darker-orange-color: #D95A1B;
+	--blue-color: #C4E7F8;
+	--darker-blue-color: #7DCAF0;
+}
+
+
 /* global styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	transition-duration: 400ms;
 }
