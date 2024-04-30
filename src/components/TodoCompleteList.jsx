@@ -11,8 +11,8 @@ export default function TodoCompleteList(props) {
 							{todoComplete}
 						</div>
 						<div className="flex items-center justify-between gap-3">
-							<div className="text-base hover:cursor-pointer xl:text-lg">
-								<i className="fa-solid fa-up-long" onClick={() => {
+							<div className="text-lg hover:cursor-pointer xl:text-xl">
+								<i className="fa-solid fa-left-long" onClick={() => {
 									handleMarkUndone(todoCompleteIndex)
 								}}></i>
 							</div>
